@@ -1,0 +1,18 @@
+<div class="CommandsTest" js-type="CommandsTest" js-baseType="CommandsTestBase" js-model="CommandsTestModel" js-css="CommandsTest.css">
+
+<div>Selected count: <span js-bind="text:selection.getCount"></span></div>
+
+<button js-event="click:toggleSelection">Toggle selection</button>
+
+<ul>
+    <js-repeat source="commands" iterator="command">
+    <js-if source="command.isEnabled">
+    <li>
+        <button js-bind="text:command.name" js-event="click:command.execute"></button>
+    </li>
+    </js-if>
+    </js-repeat>
+
+</ul>
+
+</div>
